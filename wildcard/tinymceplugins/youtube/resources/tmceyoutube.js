@@ -54,9 +54,14 @@ var Form = function(data){
 
     self.$wrap.find('button.insert').click(function(e){
       e.preventDefault();
-      self.$item.empty();
-      self.$item.append(self.getTinyEl());
-      $(overlay_selector).overlay().close();
+      var $el = self.getTinyEl();
+      if($el){
+        self.$item.empty();
+        self.$item.append($el);
+        $(overlay_selector).overlay().close();
+      }else{
+        alert('not a valid youtube url detected');
+      }
       return false;
     });
     self.$wrap.find('button.cancel').click(function(e){
@@ -71,7 +76,7 @@ var Form = function(data){
       }
       self.checkTimeout = setTimeout(function(){
         self.showPreview();
-      }, 500);
+      }, 700);
     };
 
     self.$wrap.find('input[type="text"]').keyup(check);
@@ -107,13 +112,6 @@ var Form = function(data){
   };
 
   self.getOptions = function(){
-    var url = self.get('url');
-    var id = url.split('?v=')[1];
-    var base_url = '//www.youtube.com/embed/';
-    if(self.get('privacymode')){
-      base_url = '//www.youtube-nocookie.com/embed/';
-    }
-
     var query = '?fs=1&amp;wmode=transparent&amp;rel=0';
     if(self.get('autohide')){
       query += '&amp;autohide=1';
@@ -125,10 +123,23 @@ var Form = function(data){
       query += '&amp;modestbranding=1';
     }
 
+    var url = self.get('url');
+    var id = url.split('v=')[1];
+    if(id){
+      id = id.split('&')[0]; // trim more off
+      var base_url = '//www.youtube.com/embed/';
+      if(self.get('privacymode')){
+        base_url = '//www.youtube-nocookie.com/embed/';
+      }
+      url = base_url + id + query;
+    }else{
+      url = null;
+    }
+
     return {
       width: parseInt(self.get('width')),
       height: parseInt(self.get('height')),
-      url: base_url + id + query
+      url: url
     };
   };
 
@@ -138,12 +149,18 @@ var Form = function(data){
 
   self.getMarkup = function(){
     var options = self.getOptions();
+    if(options.url === null){
+      return '<span />';
+    }
     return '<iframe width="' + options.width + '" height="' + options.height + '" ' +
                     'src="' + options.url + '" frameborder="0" allowfullscreen></iframe>';
   };
 
   self.getTinyEl = function(){
     var options = self.getOptions();
+    if(options.url === null){
+      return null;
+    }
     var data = {
       'video': {},
       'params': {
