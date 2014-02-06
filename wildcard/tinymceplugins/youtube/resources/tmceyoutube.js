@@ -33,7 +33,12 @@ var Form = function(data){
     self.checkTimeout = null;
 
     /* check for existing iframe */
-    var $iframe = self.$item.find('.mceItemIframe');
+    var $iframe = [];
+    if(self.$item.hasClass('mceItemIframe')){
+      $iframe = self.$item;
+    }else{
+      $iframe = self.$item.find('.mceItemIframe');
+    }
     if($iframe.length > 0){
       // need to convert back to normal url
       var data = tinymce.util.JSON.parse($iframe.attr('data-mce-json'));
@@ -56,8 +61,12 @@ var Form = function(data){
       e.preventDefault();
       var $el = self.getTinyEl();
       if($el){
-        self.$item.empty();
-        self.$item.append($el);
+        if(self.$item.hasClass('mceItemIframe')){
+          self.$item.replaceWith($el);
+        }else{
+          self.$item.empty();
+          self.$item.append($el);
+        }
         $(overlay_selector).overlay().close();
       }else{
         alert('not a valid youtube url detected');
