@@ -183,7 +183,7 @@ var Form = function(data){
       'bgcolor':null
     };
     var $el = $('' +
-      '<img src="themes/advanced/img/trans.gif" width="' + options.width + '"' +
+      '<img src="themes/advanced/img/video.gif" width="' + options.width + '"' +
       '     height="' + options.height + '" class="mceItemMedia mceItemIframe" >');
 
     $el.attr('data-mce-json', tinymce.util.JSON.serialize(data));

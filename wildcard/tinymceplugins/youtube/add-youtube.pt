@@ -64,6 +64,28 @@
         <div></div>
       </div>
 
+      <div class="field ArchetypesSelectionWidget" name="iframfloat" id="iframefloat">
+      	<span class="fieldRequired" title="Required">
+        	(Required)
+		</span>
+        <label class="formQuestion">
+          Float
+          <span class="formHelp">Works as image left, right</span>
+        </label>
+        <div class="fieldErrorBox"></div>
+ 		<input class="noborder blurrable" name="float" value="None" type="radio" />
+   			<label for="right">No Float</label>
+ 	    <br />
+		<input class="noborder blurrable" name="float" value="Left" type="radio" />
+  			<label for="left">Float Left</label>
+  			<br />
+ 		<input class="noborder blurrable" name="float" value="Right" type="radio" />
+   			<label for="right">Float Right</label>
+ 	    <br />
+    
+	 </div>
+
+ 
       <div class="formControls">
         <button class="context insert" type="submit" name="form.button.insert">Insert</button>
         <button class="standalone cancel" type="submit" name="form.button.cancel">Cancel</button>
