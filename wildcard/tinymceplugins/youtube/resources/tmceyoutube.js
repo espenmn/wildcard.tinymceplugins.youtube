@@ -47,6 +47,7 @@ var Form = function(data){
         var id = url.split('/embed/')[1].split('?')[0];
         var youtubeurl = 'http://www.youtube.com/watch?v=' + id;
         self.set('url', youtubeurl);
+        self.set('align', $iframe.attr('align'));
         self.set('width', $iframe.attr('width'));
         self.set('height', $iframe.attr('height'));
         self.set('privacymode', url.indexOf('nocookie.com') !== -1);
@@ -146,7 +147,7 @@ var Form = function(data){
     }
 
     return {
-      align: self.get('align'),
+      align: align,
       width: parseInt(self.get('width')),
       height: parseInt(self.get('height')),
       url: url
@@ -162,7 +163,7 @@ var Form = function(data){
     if(options.url === null){
       return '<span />';
     }
-    return '<iframe width="' + options.width + '" height="' + options.height + '" ' +
+    return '<iframe align="' + optins.align +'" width="' + options.width + '" height="' + options.height + '" ' +
                     'src="' + options.url + '" frameborder="0" allowfullscreen></iframe>';
   };
 
