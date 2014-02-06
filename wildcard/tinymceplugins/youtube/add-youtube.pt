@@ -64,27 +64,16 @@
         <div></div>
       </div>
 
-      <div class="field ArchetypesSelectionWidget" id="align">
-      	<span class="fieldRequired" title="Required">
-        	(Required)
-		</span>
-        <label class="formQuestion" for="framealign" >
+      <div class="field ArchetypesIntegerWidget">
+        <span></span>
+        <label class="formQuestion">
           Align
-          <span class="formHelp">Works as image left, right</span>
+          <span class="required" title="Required">&nbsp;</span>
         </label>
         <div class="fieldErrorBox"></div>
- 		<input class="noborder blurrable" name="frame_align" id="frame_align1" value="None" type="radio" />
-   			<label for="align_no">None</label>
- 	    <br />
-		<input class="noborder blurrable" name="frame_align" id="frame_align2" value="Left" type="radio" />
-  			<label for="align_left">Left</label>
-  			<br />
- 		<input class="noborder blurrable" name="frame_align" id="frame_align3" value="Right" type="radio" />
-   			<label for="align_right">Right</label>
- 	    <br />
-    
-	 </div>
-
+        <input type="text" name="youtubealign" class="blurrable"
+              id="youtubealign" value="Right" placeholder="Align" />
+      </div>
  
       <div class="formControls">
         <button class="context insert" type="submit" name="form.button.insert">Insert</button>
