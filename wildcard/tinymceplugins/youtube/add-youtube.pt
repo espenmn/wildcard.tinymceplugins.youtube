@@ -64,23 +64,23 @@
         <div></div>
       </div>
 
-      <div class="field ArchetypesSelectionWidget" name="iframfloat" id="iframefloat">
+      <div class="field ArchetypesSelectionWidget" name="iframealign" id="iframealign">
       	<span class="fieldRequired" title="Required">
         	(Required)
 		</span>
         <label class="formQuestion">
-          Float
+          Align
           <span class="formHelp">Works as image left, right</span>
         </label>
         <div class="fieldErrorBox"></div>
- 		<input class="noborder blurrable" name="float" value="None" type="radio" />
-   			<label for="right">No Float</label>
+ 		<input class="noborder blurrable" name="align" value="None" type="radio" />
+   			<label for="right">None</label>
  	    <br />
-		<input class="noborder blurrable" name="float" value="Left" type="radio" />
-  			<label for="left">Float Left</label>
+		<input class="noborder blurrable" name="align" value="Left" type="radio" />
+  			<label for="left">Left</label>
   			<br />
- 		<input class="noborder blurrable" name="float" value="Right" type="radio" />
-   			<label for="right">Float Right</label>
+ 		<input class="noborder blurrable" name="align" value="Right" type="radio" />
+   			<label for="right">Right</label>
  	    <br />
     
 	 </div>

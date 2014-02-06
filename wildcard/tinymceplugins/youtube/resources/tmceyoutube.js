@@ -131,7 +131,7 @@ var Form = function(data){
     if(self.get('modestbranding')){
       query += '&amp;modestbranding=1';
     }
-
+	var align = self.get('align);
     var url = self.get('url');
     var id = url.split('v=')[1];
     if(id){
@@ -146,6 +146,7 @@ var Form = function(data){
     }
 
     return {
+      align: self.get('align'),
       width: parseInt(self.get('width')),
       height: parseInt(self.get('height')),
       url: url
@@ -179,12 +180,12 @@ var Form = function(data){
       },
       'hspace':null,
       'vspace':null,
-      'align':null,
+      'align':options.align,
       'bgcolor':null
     };
     var $el = $('' +
       '<img src="themes/advanced/img/video.gif" width="' + options.width + '"' +
-      '     height="' + options.height + '" class="mceItemMedia mceItemIframe" >');
+      ' height="' + options.height + '" class="mceItemMedia mceItemIframe" >');
 
     $el.attr('data-mce-json', tinymce.util.JSON.serialize(data));
     return $el;
