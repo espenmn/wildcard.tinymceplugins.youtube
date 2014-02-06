@@ -147,7 +147,7 @@ var Form = function(data){
     }
 
     return {
-      align: align,
+      align: self.get('align'),
       width: parseInt(self.get('width')),
       height: parseInt(self.get('height')),
       url: url
@@ -163,7 +163,7 @@ var Form = function(data){
     if(options.url === null){
       return '<span />';
     }
-    return '<iframe align="' + optins.align +'" width="' + options.width + '" height="' + options.height + '" ' +
+    return '<iframe align="' + optins.align + '" width="' + options.width + '" height="' + options.height + '" ' +
                     'src="' + options.url + '" frameborder="0" allowfullscreen></iframe>';
   };
 
@@ -185,7 +185,7 @@ var Form = function(data){
       'bgcolor':null
     };
     var $el = $('' +
-      '<img src="themes/advanced/img/video.gif" width="' + options.width + '"' +
+      '<img src="themes/advanced/img/video.gif"  align="' + options.align + '" width="' + options.width + '"' +
       ' height="' + options.height + '" class="mceItemMedia mceItemIframe" >');
 
     $el.attr('data-mce-json', tinymce.util.JSON.serialize(data));
