@@ -36,6 +36,16 @@
         <input type="text" name="youtubeheight" class="blurrable"
               id="youtubeheight" value="300" placeholder="Height" />
       </div>
+      <div class="field ArchetypesIntegerWidget">
+        <span></span>
+        <label class="formQuestion">
+          Align
+          <span class="required" title="Required">&nbsp;</span>
+        </label>
+        <div class="fieldErrorBox"></div>
+        <input type="text" name="youtubealign" class="blurrable"
+              id="youtubealign" value="Right" placeholder="Align" />
+      </div>
       <div class="field ArchetypesBooleanWidget">
         <input class="noborder" type="checkbox" value="on" name="youtubeprivacymode" id="youtubeprivacymode" >
         <label class="formQuestion">
@@ -63,18 +73,6 @@
         <div class="fieldErrorBox"></div>
         <div></div>
       </div>
-
-      <div class="field ArchetypesIntegerWidget">
-        <span></span>
-        <label class="formQuestion">
-          Align
-          <span class="required" title="Required">&nbsp;</span>
-        </label>
-        <div class="fieldErrorBox"></div>
-        <input type="text" name="youtubealign" class="blurrable"
-              id="youtubealign" value="Right" placeholder="Align" />
-      </div>
- 
       <div class="formControls">
         <button class="context insert" type="submit" name="form.button.insert">Insert</button>
         <button class="standalone cancel" type="submit" name="form.button.cancel">Cancel</button>

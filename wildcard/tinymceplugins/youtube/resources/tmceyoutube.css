@@ -1,11 +1,11 @@
-img.mceItemMediaand {
+.pb_99938783  {
+	display: inline-block;
+}
+
+img.mceItemMedia.mceItemIframe {
     background: black;
     background-image: url('++resource++tmceyoutube/youtube.png');
     background-repeat: no-repeat;
     background-position: center center;
 
-}
- 
-.pb_99938783  {
-	display: inline-block;
 }
