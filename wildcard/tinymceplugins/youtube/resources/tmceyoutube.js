@@ -149,7 +149,7 @@ var Form = function(data){
     return {
       width: parseInt(self.get('width')),
       height: parseInt(self.get('height')),
-      align: 'None',
+      align: self.get('align'),
       url: url
     };
   };
@@ -177,7 +177,7 @@ var Form = function(data){
       'params': {
         'src': options.url,
         'frameborder': '0',
-        'align': align,
+        'align': options.align,
         'allowfullscreen': ''
       },
       'hspace':null,
