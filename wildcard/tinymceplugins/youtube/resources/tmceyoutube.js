@@ -132,7 +132,9 @@ var Form = function(data){
     if(self.get('modestbranding')){
       query += '&amp;modestbranding=1';
     }
-
+	if(self.get('align')){
+      query += '&amp;align';
+    }
     var url = self.get('url')
     var id = url.split('v=')[1];
     if(id){
