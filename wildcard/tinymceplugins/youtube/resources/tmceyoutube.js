@@ -149,7 +149,7 @@ var Form = function(data){
     return {
       width: parseInt(self.get('width')),
       height: parseInt(self.get('height')),
-      align: self.get('align'),
+      align: (self.get('align')),
       url: url
     };
   };
@@ -182,6 +182,7 @@ var Form = function(data){
       },
       'hspace':null,
       'vspace':null,
+      'align': options.align,
       'bgcolor':null
     };
     var $el = $('' +
