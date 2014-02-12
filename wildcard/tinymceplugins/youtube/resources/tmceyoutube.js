@@ -43,7 +43,6 @@ var Form = function(data){
       // need to convert back to normal url
       var data = tinymce.util.JSON.parse($iframe.attr('data-mce-json'));
       var url = data.params.src;
-      var align = data.params.align;
       if(url.indexOf('www.youtube') !== -1){
         var id = url.split('/embed/')[1].split('?')[0];
         var youtubeurl = 'http://www.youtube.com/watch?v=' + id;
@@ -150,7 +149,7 @@ var Form = function(data){
     return {
       width: parseInt(self.get('width')),
       height: parseInt(self.get('height')),
-      align: self.get('align'),
+      align: 'None',
       url: url
     };
   };
@@ -164,7 +163,7 @@ var Form = function(data){
     if(options.url === null){
       return '<span />';
     }
-    return '<iframe align="' + options.align + '" width="' + options.width + '" height="' + options.height + '" ' +
+    return '<iframe align="' + options.align  + '" width="' + options.width + '" height="' + options.height + '" ' +
                     'src="' + options.url + '" frameborder="0" allowfullscreen></iframe>';
   };
 
@@ -178,16 +177,16 @@ var Form = function(data){
       'params': {
         'src': options.url,
         'frameborder': '0',
-        'align': options.align,
+        'align': align,
         'allowfullscreen': ''
       },
       'hspace':null,
       'vspace':null,
-      'align':options.align,
       'bgcolor':null
     };
     var $el = $('' +
       '<img src="themes/advanced/img/trans.gif" width="' + options.width + '"' +
+      '     align="' + options.align + '"' +
       '     height="' + options.height + '" class="mceItemMedia mceItemIframe" >');
 
     $el.attr('data-mce-json', tinymce.util.JSON.serialize(data));

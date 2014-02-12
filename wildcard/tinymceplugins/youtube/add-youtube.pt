@@ -1,4 +1,4 @@
-<h1>Add youtube video</h1>
+<h1>Youtube video</h1>
 
 <div class="row" id="youtubeoverlay">
   <div class="cell position-0 width-1:2">
@@ -47,7 +47,7 @@
         </label>
         <div class="fieldErrorBox"></div>
         <input type="text" name="align" class="blurrable firstToFocus"
-              id="align" value="" placeholder="Align" size="10" maxlength="50" />
+              id="align" value="Left" placeholder="Align" />
       </div>
       <div class="field ArchetypesBooleanWidget">
         <input class="noborder" type="checkbox" value="on" name="youtubeprivacymode" id="youtubeprivacymode" >
