@@ -36,19 +36,17 @@
         <input type="text" name="youtubeheight" class="blurrable"
               id="youtubeheight" value="300" placeholder="Height" />
       </div>
-      <div class="field ArchetypesStringWidget">
-        <span></span>
+
+      <div class="field ArchetypesBooleanWidget">
+        <input class="noborder" type="checkbox" value="on" name="align" id="align" >
         <label class="formQuestion">
           Align
-          <span class="required" title="Required">&nbsp;</span>
-          <span class="formHelp" id="align_help">
-            Enter alignment ( Right / Left / None )
-          </span>
+          <span class="formHelp">If selected, will float somewhere.</span>
         </label>
         <div class="fieldErrorBox"></div>
-        <input type="text" name="align" class="blurrable firstToFocus"
-              id="align" value="Left" placeholder="Align" />
+        <div></div>
       </div>
+
       <div class="field ArchetypesBooleanWidget">
         <input class="noborder" type="checkbox" value="on" name="youtubeprivacymode" id="youtubeprivacymode" >
         <label class="formQuestion">

@@ -165,7 +165,7 @@ var Form = function(data){
     if(options.url === null){
       return '<span />';
     }
-    return '<iframe align="' + options.align  + '" width="' + options.width + '" height="' + options.height + '" ' +
+    return '<iframe align="Right" width="' + options.width + '" height="' + options.height + '" ' +
                     'src="' + options.url + '" frameborder="0" allowfullscreen></iframe>';
   };
 
@@ -189,7 +189,7 @@ var Form = function(data){
     };
     var $el = $('' +
       '<img src="themes/advanced/img/trans.gif" width="' + options.width + '"' +
-      '     align="' + options.align + '"' +
+      '     align="Right"' +
       '     height="' + options.height + '" class="mceItemMedia mceItemIframe" >');
 
     $el.attr('data-mce-json', tinymce.util.JSON.serialize(data));
